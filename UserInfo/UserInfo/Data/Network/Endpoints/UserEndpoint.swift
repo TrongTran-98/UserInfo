@@ -7,18 +7,18 @@
 
 import Foundation
 
-enum UserEndpoint: Endpoint {
+enum UserEndpoint {
     
-    // List users
+    /// List users
     case users(pageItemCount: Int, lastId: Int)
-    // User detail
+    /// User detail
     case userDetail(loginName: String)
     
-    // MARK: - Endpoint Characteristics
+}
+
+extension UserEndpoint: Endpoint {
     
-    var baseURL: URL {
-        return URL(string: "https://api.github.com")!
-    }
+    var baseURL: URL { return URL(string: "https://api.github.com")! }
     
     var path: String { return "/users" }
     

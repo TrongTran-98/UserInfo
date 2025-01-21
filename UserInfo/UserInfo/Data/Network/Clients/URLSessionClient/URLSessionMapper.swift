@@ -11,7 +11,6 @@ import Foundation
 enum URLSessionError: Error {
     case invalidResponse
     case noData
-    case decodingFail
 }
 
 protocol URLSessionMapper {
@@ -31,14 +30,9 @@ extension URLSessionMapper {
             throw URLSessionError.noData
         }
         /// Try to decode data
-        do {
-            let decodedData = try JSONDecoder().decode(T.self, from: data)
-            return decodedData
-        } catch {
-            throw URLSessionError.decodingFail
-        }
+        return try JSONDecoder().decode(T.self, from: data)
     }
 }
 
-/// Using default mapData function, so don't need to override mapData function in this case
+/// Using Default mapData() function, so don't need to override in this case
 struct DefaultURLSessionMapper: URLSessionMapper {}
