@@ -6,6 +6,7 @@
 
 import Foundation
 import Combine
+import SnapKit
 import UIKit
 
 class BaseViewController: UIViewController {
@@ -13,6 +14,8 @@ class BaseViewController: UIViewController {
     let viewModel: BaseViewModel
     
     var cancellables = Set<AnyCancellable>()
+    
+    private lazy var loadingIndicator = UIActivityIndicatorView()
     
     init(viewModel: BaseViewModel) {
         self.viewModel = viewModel
@@ -45,4 +48,20 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func showLoadingIndicatorView() {
+        if loadingIndicator.superview == nil {
+            view.addSubview(loadingIndicator)
+            loadingIndicator.snp.makeConstraints({ make in
+                make.center.equalToSuperview()
+                make.width.height.equalToSuperview()
+            })
+        }
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+    }
+    
+    func hideLoadingIndicatorView() {
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
+    }
 }

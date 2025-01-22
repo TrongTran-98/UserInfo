@@ -59,7 +59,11 @@ class UserDetailsViewController: BaseViewController {
         
         detailViewModel.$isLoading.receive(on: DispatchQueue.main).sink { [weak self] isLoading in
             guard let self = self else { return }
-            // TODO: Show loading here
+            if isLoading {
+                self.showLoadingIndicatorView()
+            } else {
+                self.hideLoadingIndicatorView()
+            }
         }.store(in: &cancellables)
         
         detailViewModel.$user.receive(on: DispatchQueue.main).sink { [weak self] user in
@@ -123,7 +127,6 @@ class UserDetailsViewController: BaseViewController {
             urlLabel.text = user.htmlUrl
         } else {
             infoContainer.isHidden = true
-            // TODO: Show loading here
         }
     }
 }

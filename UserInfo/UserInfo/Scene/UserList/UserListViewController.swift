@@ -49,8 +49,12 @@ class UserListViewController: BaseViewController {
             guard let self = self else { return }
             if !isLoading {
                 self.refresh.endRefreshing()
+                self.hideLoadingIndicatorView()
             }
-            // TODO: - Show loading
+            // Show at initial loading
+            if dataSource.isEmpty && isLoading {
+                self.showLoadingIndicatorView()
+            }
         }).store(in: &cancellables)
         
         listViewModel.$users.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
