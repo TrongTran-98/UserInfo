@@ -50,10 +50,11 @@ class UserListViewController: BaseViewController {
             if !isLoading {
                 self.refresh.endRefreshing()
                 self.hideLoadingIndicatorView()
-            }
-            // Show at initial loading
-            if dataSource.isEmpty && isLoading {
-                self.showLoadingIndicatorView()
+            } else {
+                // Show at initial loading
+                if dataSource.isEmpty {
+                    self.showLoadingIndicatorView()
+                }
             }
         }).store(in: &cancellables)
         
@@ -106,6 +107,28 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Try to load more when reached last cell
+        if indexPath.row == dataSource.count - 1 && !dataSource.isEmpty {
+            userListViewModel?.fetchUsers()
+        }
+        // Show bottom indicator if need
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex && userListViewModel?.hasMore ?? false {
+            let spinner = UIActivityIndicatorView(style: .medium)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            
+            self.tableView.tableFooterView = spinner
+            self.tableView.tableFooterView?.isHidden = false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -12,8 +12,9 @@ class UserListViewModel: BaseViewModel {
     @Published private(set) var users: [User] = []
     @Published private(set) var isLoading: Bool = false
     
+    private(set) var hasMore: Bool = true
     private let pageSize: Int = 20
-    private var hasMore: Bool = true
+    
     
     init(fetchUsersUsecase: FetchUsersUsecase = DefaultFetchUsersUsecase()) {
         self.fetchUsersUsecase = fetchUsersUsecase
