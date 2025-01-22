@@ -7,9 +7,9 @@
 import Foundation
 import Network
 
-class NetworkHelper {
+class NWMonitorHelper {
     
-    static let shared: NetworkHelper = NetworkHelper()
+    static let shared: NWMonitorHelper = NWMonitorHelper()
     
     var isConnected: Bool = false
     var isUsingCellular: Bool = false

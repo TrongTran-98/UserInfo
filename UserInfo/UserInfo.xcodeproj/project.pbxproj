@@ -27,12 +27,17 @@
 		9DCE80CC2D3F98BE00553019 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80CB2D3F98A400553019 /* UserDefaultStorage.swift */; };
 		9DCE80D12D3FA48200553019 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80D02D3FA47900553019 /* UserRepository.swift */; };
 		9DCE80D32D3FA4D400553019 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80D22D3FA4CB00553019 /* DefaultUserRepository.swift */; };
-		9DCE80D52D3FA57D00553019 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80D42D3FA57D00553019 /* NetworkHelper.swift */; };
-		9DCE80D82D3FAA9100553019 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCE80D72D3FAA9100553019 /* Realm */; };
+		9DCE80D52D3FA57D00553019 /* NWMonitorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80D42D3FA57D00553019 /* NWMonitorHelper.swift */; };
 		9DCE80DA2D3FAA9100553019 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCE80D92D3FAA9100553019 /* RealmSwift */; };
 		9DCE80DD2D3FAAF100553019 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80DC2D3FAAEA00553019 /* RealmUser.swift */; };
 		9DCE80DF2D3FACCA00553019 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80DE2D3FACC600553019 /* RealmStorage.swift */; };
 		9DCE80E22D3FB1CF00553019 /* UserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80E12D3FB1C800553019 /* UserUsecase.swift */; };
+		9DCE80E72D40807E00553019 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80E62D40807400553019 /* UserListViewModel.swift */; };
+		9DCE80EC2D40821800553019 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80EB2D40821000553019 /* UserListViewController.swift */; };
+		9DCE80EE2D40822B00553019 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80ED2D40821F00553019 /* UserDetailsViewController.swift */; };
+		9DCE80F02D40823600553019 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80EF2D40822E00553019 /* UserDetailsViewModel.swift */; };
+		9DCE80F32D408D2E00553019 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80F22D408D2900553019 /* BaseViewModel.swift */; };
+		9DCE80F52D408D3500553019 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80F42D408D3100553019 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,10 +82,16 @@
 		9DCE80CB2D3F98A400553019 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		9DCE80D02D3FA47900553019 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9DCE80D22D3FA4CB00553019 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
-		9DCE80D42D3FA57D00553019 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		9DCE80D42D3FA57D00553019 /* NWMonitorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWMonitorHelper.swift; sourceTree = "<group>"; };
 		9DCE80DC2D3FAAEA00553019 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		9DCE80DE2D3FACC600553019 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		9DCE80E12D3FB1C800553019 /* UserUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsecase.swift; sourceTree = "<group>"; };
+		9DCE80E62D40807400553019 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		9DCE80EB2D40821000553019 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		9DCE80ED2D40821F00553019 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		9DCE80EF2D40822E00553019 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
+		9DCE80F22D408D2900553019 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		9DCE80F42D408D3100553019 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +100,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCE80DA2D3FAA9100553019 /* RealmSwift in Frameworks */,
-				9DCE80D82D3FAA9100553019 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +148,7 @@
 				9DCE80C92D3F6DC100553019 /* Utils */,
 				9DCE80A22D3F3F8B00553019 /* Domain */,
 				9DCE80A62D3F435700553019 /* Data */,
+				9DCE80E52D40806100553019 /* Scene */,
 				9D45F8FC2D3F3AEB0042B93D /* ViewController.swift */,
 			);
 			path = UserInfo;
@@ -248,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				9DCE80B32D3F470500553019 /* Protocol */,
-				9DCE80B12D3F46D700553019 /* UserEndpoint.swift */,
+				9DCE80EA2D4080F200553019 /* UserEndpoint */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -298,7 +309,7 @@
 		9DCE80C92D3F6DC100553019 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9DCE80D42D3FA57D00553019 /* NetworkHelper.swift */,
+				9DCE80D42D3FA57D00553019 /* NWMonitorHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -328,6 +339,51 @@
 			path = UserDefaultStorage;
 			sourceTree = "<group>";
 		};
+		9DCE80E52D40806100553019 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80F12D408D2500553019 /* Base */,
+				9DCE80E92D40808700553019 /* UserDetails */,
+				9DCE80E82D40808200553019 /* UserList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		9DCE80E82D40808200553019 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80E62D40807400553019 /* UserListViewModel.swift */,
+				9DCE80EB2D40821000553019 /* UserListViewController.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		9DCE80E92D40808700553019 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80EF2D40822E00553019 /* UserDetailsViewModel.swift */,
+				9DCE80ED2D40821F00553019 /* UserDetailsViewController.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		9DCE80EA2D4080F200553019 /* UserEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80B12D3F46D700553019 /* UserEndpoint.swift */,
+			);
+			path = UserEndpoint;
+			sourceTree = "<group>";
+		};
+		9DCE80F12D408D2500553019 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80F22D408D2900553019 /* BaseViewModel.swift */,
+				9DCE80F42D408D3100553019 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,7 +401,6 @@
 			);
 			name = UserInfo;
 			packageProductDependencies = (
-				9DCE80D72D3FAA9100553019 /* Realm */,
 				9DCE80D92D3FAA9100553019 /* RealmSwift */,
 			);
 			productName = UserInfo;
@@ -477,11 +532,17 @@
 				9D45F9022D3F3AEB0042B93D /* AppDelegate.swift in Sources */,
 				9DCE80B22D3F46E900553019 /* UserEndpoint.swift in Sources */,
 				9DCE80DD2D3FAAF100553019 /* RealmUser.swift in Sources */,
+				9DCE80F52D408D3500553019 /* BaseViewController.swift in Sources */,
+				9DCE80EC2D40821800553019 /* UserListViewController.swift in Sources */,
 				9DCE80CC2D3F98BE00553019 /* UserDefaultStorage.swift in Sources */,
 				9DCE80BF2D3F5B5C00553019 /* URLSessionClient.swift in Sources */,
+				9DCE80F02D40823600553019 /* UserDetailsViewModel.swift in Sources */,
+				9DCE80E72D40807E00553019 /* UserListViewModel.swift in Sources */,
 				9DCE80AB2D3F452700553019 /* User.swift in Sources */,
-				9DCE80D52D3FA57D00553019 /* NetworkHelper.swift in Sources */,
+				9DCE80D52D3FA57D00553019 /* NWMonitorHelper.swift in Sources */,
+				9DCE80EE2D40822B00553019 /* UserDetailsViewController.swift in Sources */,
 				9D45F9032D3F3AEB0042B93D /* SceneDelegate.swift in Sources */,
+				9DCE80F32D408D2E00553019 /* BaseViewModel.swift in Sources */,
 				9DCE80C22D3F651D00553019 /* UserService.swift in Sources */,
 				9DCE80DF2D3FACCA00553019 /* RealmStorage.swift in Sources */,
 				9DCE80B02D3F462B00553019 /* Endpoint.swift in Sources */,
@@ -838,8 +899,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 10.49.3;
 			};
 		};
 		9DCE80DB2D3FAAC900553019 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -853,11 +914,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9DCE80D72D3FAA9100553019 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9DCE80D62D3FAA9100553019 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		9DCE80D92D3FAA9100553019 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DCE80D62D3FAA9100553019 /* XCRemoteSwiftPackageReference "realm-swift" */;

@@ -11,6 +11,8 @@ protocol UserService {
     
 }
 
+// MARK: - Service Implementation
+
 class UserServiceImpletation: UserService {
     
     private let networkClient: NetworkClient
