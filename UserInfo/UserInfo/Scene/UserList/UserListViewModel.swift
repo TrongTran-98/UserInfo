@@ -24,8 +24,9 @@ class UserListViewModel: BaseViewModel {
         /// Update loading status
         self.isLoading = true
         /// Fetch users
+        let lastId = users.last?.id ?? 0
         self.fetchUsersUsecase.fetchUsers(pageSize: pageSize,
-                                     sinceId: users.last?.id ?? 0) { [weak self] result in
+                                          sinceId: lastId) { [weak self] result in
             guard let self = self else { return }
             /// Update loading status
             self.isLoading = false
@@ -35,11 +36,20 @@ class UserListViewModel: BaseViewModel {
                 case .success(let users):
                     self.hasMore = users.count == 20
                     self.users.append(contentsOf: users)
+                    print("fetched success \(users.count)")
                 case .failure(let error):
                     self.handleError(error)
                 }
             }
         }
+    }
+    
+    func refresh() {
+        /// Reset
+        users.removeAll()
+        hasMore = true
+        /// Fetch users
+        fetchUsers()
     }
     
 }

@@ -7,12 +7,6 @@
 
 import Foundation
 
-/// Error can be extended based on defination cases in specific network clients
-enum URLSessionError: Error {
-    case invalidResponse
-    case noData
-}
-
 protocol URLSessionMapper {
     func mapData<T: Decodable>(_ type: T.Type, data: Data?, response: URLResponse?) throws -> T
 }

@@ -29,9 +29,11 @@ extension DefaultUserRepository: UserRepository {
     func fetchUsers(pageSize: Int, sinceId: Int, completion: @escaping (Result<[User], Error>) -> Void) {
         // Offline mode is checked in the first page
         if sinceId == 0 && !NWMonitorHelper.shared.isConnected {
+            print("Loading data from cache because there is no internet")
             storageCache.fetchAllUsers(completion: completion)
         } else {
         // Online mode -> Let's call API
+            print("Call API to get new data since id \(sinceId)")
             service.fetchUsers(pageSize: pageSize, sinceId: sinceId, completion: { [weak self] result in
                 guard let self = self else { return }
                 completion(result)

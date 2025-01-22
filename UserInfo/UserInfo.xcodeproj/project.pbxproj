@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D2874B72D40E722007D0DFA /* URLSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2874B62D40E71C007D0DFA /* URLSessionError.swift */; };
+		9D2874BA2D40E877007D0DFA /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2874B92D40E86E007D0DFA /* UserViewCell.swift */; };
+		9D2874BD2D40E8A1007D0DFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2874BC2D40E8A1007D0DFA /* SnapKit */; };
 		9D45F8FE2D3F3AEB0042B93D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D45F8F52D3F3AEB0042B93D /* Assets.xcassets */; };
 		9D45F9002D3F3AEB0042B93D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D45F8F82D3F3AEB0042B93D /* LaunchScreen.storyboard */; };
 		9D45F9012D3F3AEB0042B93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D45F8FA2D3F3AEB0042B93D /* Main.storyboard */; };
@@ -58,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D2874B62D40E71C007D0DFA /* URLSessionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionError.swift; sourceTree = "<group>"; };
+		9D2874B92D40E86E007D0DFA /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		9D45F8BE2D3F3A080042B93D /* UserInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D45F8D42D3F3A0A0042B93D /* UserInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D45F8DE2D3F3A0A0042B93D /* UserInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCE80DA2D3FAA9100553019 /* RealmSwift in Frameworks */,
+				9D2874BD2D40E8A1007D0DFA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,12 +126,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D2874B52D40E70D007D0DFA /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				9D2874B62D40E71C007D0DFA /* URLSessionError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		9D2874B82D40E865007D0DFA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9D2874B92D40E86E007D0DFA /* UserViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9D2874BB2D40E8A1007D0DFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D2874BE2D40EEB1007D0DFA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80AA2D3F451800553019 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		9D45F8B52D3F3A080042B93D = {
 			isa = PBXGroup;
 			children = (
 				9D45F8FD2D3F3AEB0042B93D /* UserInfo */,
 				9D45F9062D3F3AEE0042B93D /* UserInfoTests */,
 				9D45F90A2D3F3AF00042B93D /* UserInfoUITests */,
+				9D2874BB2D40E8A1007D0DFA /* Frameworks */,
 				9D45F8BF2D3F3A080042B93D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,7 +233,7 @@
 		9DCE80A32D3F432A00553019 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				9DCE80AA2D3F451800553019 /* User.swift */,
+				9D2874BE2D40EEB1007D0DFA /* User */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -292,6 +330,7 @@
 		9DCE80C02D3F5FE800553019 /* URLSessionClient */ = {
 			isa = PBXGroup;
 			children = (
+				9D2874B52D40E70D007D0DFA /* Error */,
 				9DCE80BE2D3F5B5500553019 /* URLSessionClient.swift */,
 				9DCE80BA2D3F4D8A00553019 /* URLSessionMapper.swift */,
 			);
@@ -352,6 +391,7 @@
 		9DCE80E82D40808200553019 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				9D2874B82D40E865007D0DFA /* Cell */,
 				9DCE80E62D40807400553019 /* UserListViewModel.swift */,
 				9DCE80EB2D40821000553019 /* UserListViewController.swift */,
 			);
@@ -402,6 +442,7 @@
 			name = UserInfo;
 			packageProductDependencies = (
 				9DCE80D92D3FAA9100553019 /* RealmSwift */,
+				9D2874BC2D40E8A1007D0DFA /* SnapKit */,
 			);
 			productName = UserInfo;
 			productReference = 9D45F8BE2D3F3A080042B93D /* UserInfo.app */;
@@ -539,6 +580,7 @@
 				9DCE80F02D40823600553019 /* UserDetailsViewModel.swift in Sources */,
 				9DCE80E72D40807E00553019 /* UserListViewModel.swift in Sources */,
 				9DCE80AB2D3F452700553019 /* User.swift in Sources */,
+				9D2874B72D40E722007D0DFA /* URLSessionError.swift in Sources */,
 				9DCE80D52D3FA57D00553019 /* NWMonitorHelper.swift in Sources */,
 				9DCE80EE2D40822B00553019 /* UserDetailsViewController.swift in Sources */,
 				9D45F9032D3F3AEB0042B93D /* SceneDelegate.swift in Sources */,
@@ -551,6 +593,7 @@
 				9DCE80BB2D3F4D9100553019 /* URLSessionMapper.swift in Sources */,
 				9D45F9042D3F3AEB0042B93D /* ViewController.swift in Sources */,
 				9DCE80B72D3F4BAE00553019 /* NetworkClient.swift in Sources */,
+				9D2874BA2D40E877007D0DFA /* UserViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,6 +957,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9D2874BC2D40E8A1007D0DFA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DCE80DB2D3FAAC900553019 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		9DCE80D92D3FAA9100553019 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DCE80D62D3FAA9100553019 /* XCRemoteSwiftPackageReference "realm-swift" */;

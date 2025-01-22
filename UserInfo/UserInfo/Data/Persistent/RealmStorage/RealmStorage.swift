@@ -18,44 +18,50 @@ class RealmStorage {
 extension RealmStorage: UserStorage {
     
     func saveUsers(_ users: [User]) {
-        do {
-            try realm?.write { [weak self] in
-                guard let self = self else { return }
-                /// Remove old users
-                if let users = realm?.objects(RealmUser.self) {
-                    self.realm?.delete(users)
+        DispatchQueue.main.async {
+            do {
+                try self.realm?.write { [weak self] in
+                    guard let self = self else { return }
+                    /// Remove old users
+                    if let users = realm?.objects(RealmUser.self) {
+                        self.realm?.delete(users)
+                    }
+                    /// Add new users
+                    self.realm?.add(users.map({ RealmUser(user: $0) }))
                 }
-                /// Add new users
-                self.realm?.add(users.map({ RealmUser(user: $0) }))
+            } catch {
+                print("Realm save error - \(error.localizedDescription)")
             }
-        } catch {
-            print("Realm save error - \(error.localizedDescription)")
         }
     }
     
     func fetchAllUsers(completion: @escaping (Result<[User], any Error>) -> Void) {
-        guard let users = realm?.objects(RealmUser.self) else {
-            completion(.success([]))
-            return
+        DispatchQueue.main.async {
+            guard let users = self.realm?.objects(RealmUser.self) else {
+                completion(.success([]))
+                return
+            }
+            completion(.success(users.map(\.user)))
         }
-        completion(.success(users.map(\.user)))
     }
     
     func removeAllUsers(completion: @escaping (Result<Void, any Error>) -> Void) {
-        do {
-            // Check if existing users
-            guard let users = realm?.objects(RealmUser.self) else {
+        DispatchQueue.main.async {
+            do {
+                // Check if existing users
+                guard let users = self.realm?.objects(RealmUser.self) else {
+                    completion(.success(()))
+                    return
+                }
+                // Try to delete
+                try self.realm?.write { [weak self] in
+                    guard let self = self else { return }
+                    self.realm?.delete(users)
+                }
                 completion(.success(()))
-                return
+            } catch {
+                completion(.failure(error))
             }
-            // Try to delete
-            try realm?.write { [weak self] in
-                guard let self = self else { return }
-                self.realm?.delete(users)
-            }
-            completion(.success(()))
-        } catch {
-            completion(.failure(error))
         }
     }
     
