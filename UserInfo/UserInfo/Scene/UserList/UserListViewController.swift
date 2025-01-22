@@ -30,6 +30,8 @@ class UserListViewController: BaseViewController {
         return tableView
     }()
     
+    private let refresh = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -49,11 +51,15 @@ class UserListViewController: BaseViewController {
         
         listViewModel.$isLoading.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] isLoading in
             guard let self = self else { return }
+            if !isLoading {
+                self.refresh.endRefreshing()
+            }
             // TODO: - Show loading
         }).store(in: &cancellables)
         
         listViewModel.$users.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
             guard let self = self else { return }
+            
             self.tableView.reloadData()
         }).store(in: &cancellables)
     }
@@ -67,6 +73,12 @@ class UserListViewController: BaseViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         })
+        tableView.refreshControl = refresh
+        refresh.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+    }
+    
+    @objc private func pullToRefresh() {
+        userListViewModel?.refresh()
     }
     
 }

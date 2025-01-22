@@ -70,9 +70,10 @@ class UserViewCell: UITableViewCell {
         descStackView.addArrangedSubview(seperatorLine)
         descStackView.addArrangedSubview(urlLabel)
         
-        seperatorLine.backgroundColor = .red
+        seperatorLine.backgroundColor = .separator
         seperatorLine.snp.makeConstraints({ make in
             make.height.equalTo(1)
+            make.width.equalToSuperview()
         })
         
         descStackView.snp.makeConstraints({ make in

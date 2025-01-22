@@ -15,7 +15,6 @@
 		9D45F9012D3F3AEB0042B93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D45F8FA2D3F3AEB0042B93D /* Main.storyboard */; };
 		9D45F9022D3F3AEB0042B93D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8F42D3F3AEB0042B93D /* AppDelegate.swift */; };
 		9D45F9032D3F3AEB0042B93D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8FB2D3F3AEB0042B93D /* SceneDelegate.swift */; };
-		9D45F9042D3F3AEB0042B93D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8FC2D3F3AEB0042B93D /* ViewController.swift */; };
 		9D45F9072D3F3AEE0042B93D /* UserInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9052D3F3AEE0042B93D /* UserInfoTests.swift */; };
 		9D45F90B2D3F3AF00042B93D /* UserInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */; };
 		9D45F90C2D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */; };
@@ -72,7 +71,6 @@
 		9D45F8F72D3F3AEB0042B93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D45F8F92D3F3AEB0042B93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D45F8FB2D3F3AEB0042B93D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D45F8FC2D3F3AEB0042B93D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D45F9052D3F3AEE0042B93D /* UserInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTests.swift; sourceTree = "<group>"; };
 		9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUITests.swift; sourceTree = "<group>"; };
 		9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				9DCE80A22D3F3F8B00553019 /* Domain */,
 				9DCE80A62D3F435700553019 /* Data */,
 				9DCE80E52D40806100553019 /* Scene */,
-				9D45F8FC2D3F3AEB0042B93D /* ViewController.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -591,7 +588,6 @@
 				9DCE80C42D3F6AE500553019 /* UserStorage.swift in Sources */,
 				9DCE80E22D3FB1CF00553019 /* UserUsecase.swift in Sources */,
 				9DCE80BB2D3F4D9100553019 /* URLSessionMapper.swift in Sources */,
-				9D45F9042D3F3AEB0042B93D /* ViewController.swift in Sources */,
 				9DCE80B72D3F4BAE00553019 /* NetworkClient.swift in Sources */,
 				9D2874BA2D40E877007D0DFA /* UserViewCell.swift in Sources */,
 			);
