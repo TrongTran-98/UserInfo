@@ -35,10 +35,6 @@ class UserListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             self.userListViewModel?.fetchUsers()
         })
@@ -59,7 +55,6 @@ class UserListViewController: BaseViewController {
         
         listViewModel.$users.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] _ in
             guard let self = self else { return }
-            
             self.tableView.reloadData()
         }).store(in: &cancellables)
     }
@@ -81,7 +76,15 @@ class UserListViewController: BaseViewController {
         userListViewModel?.refresh()
     }
     
+    private func showDetailUser(user: User) {
+        guard let loginName = user.login else { return }
+        let controller = UserDetailsViewController(loginName: loginName)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
+
+// MARK: - Table View
 
 extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     var dataSource: [User] { userListViewModel?.users ?? [] }
@@ -99,5 +102,10 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = dataSource[indexPath.row]
+        showDetailUser(user: user)
     }
 }

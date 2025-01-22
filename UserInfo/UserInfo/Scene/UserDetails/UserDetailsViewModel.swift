@@ -29,13 +29,12 @@ class UserDetailsViewModel: BaseViewModel {
             /// Update loading status
             self.isLoading = false
             /// Handle result
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let user):
-                    self.user = user
-                case .failure(let error):
-                    self.handleError(error)
-                }
+            switch result {
+            case .success(let user):
+                self.user = user
+                print("Fetched user detail success \(user.login ?? "")")
+            case .failure(let error):
+                self.handleError(error)
             }
         }
     }

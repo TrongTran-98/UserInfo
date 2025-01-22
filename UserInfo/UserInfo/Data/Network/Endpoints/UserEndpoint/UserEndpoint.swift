@@ -19,7 +19,14 @@ extension UserEndpoint: Endpoint {
     
     var baseURL: URL { return URL(string: "https://api.github.com")! }
     
-    var path: String { return "/users" }
+    var path: String {
+        switch self {
+        case .users(let perPage, let sinceId):
+            return "/users"
+        case .userDetail(let loginName):
+            return "/users/\(loginName)"
+        }
+    }
     
     var method: HTTPMethod { return .get }
     
@@ -29,8 +36,8 @@ extension UserEndpoint: Endpoint {
         switch self {
         case .users(let perPage, let sinceId):
             return ["per_page": perPage, "since": sinceId]
-        case .userDetail(let loginName):
-            return ["login_username": loginName]
+        case .userDetail:
+            return nil
         }
     }
     

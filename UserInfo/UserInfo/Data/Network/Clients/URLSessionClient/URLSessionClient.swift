@@ -51,6 +51,7 @@ extension URLSessionClient: NetworkClient {
                     let decodedModel = try self.dataMapper.mapData(T.self, data: data, response: response)
                     completion(.success(decodedModel))
                 } catch {
+                    print("error \(error)")
                     completion(.failure(URLSessionError.undefined(error)))
                 }
             })
