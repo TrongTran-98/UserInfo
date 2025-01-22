@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     
     var cancellables = Set<AnyCancellable>()
     
-    private lazy var loadingIndicator = UIActivityIndicatorView()
+    private lazy var loadingIndicator = UIActivityIndicatorView(style: .medium)
     
     init(viewModel: BaseViewModel) {
         self.viewModel = viewModel

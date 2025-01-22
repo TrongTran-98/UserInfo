@@ -21,7 +21,7 @@ extension UserEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .users(let perPage, let sinceId):
+        case .users:
             return "/users"
         case .userDetail(let loginName):
             return "/users/\(loginName)"

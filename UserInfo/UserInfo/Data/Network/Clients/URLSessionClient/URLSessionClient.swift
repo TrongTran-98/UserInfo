@@ -14,15 +14,7 @@ import Foundation
 ///     }
 ///}
 /// That help us change and update new 3rd Lib or trending technology without modifying code base
-/// In this case we are using the URLSession as a network lib
-///
-/// - If we want to use customize request() function of URLSession,
-/// just inhering class URLSessionClient and override that function
-///
-/// - Additionally, if we want to change Mapper behavior or customize URLSession, just injecting them into intialize function
-/// Example
-/// ** let client = URLSessionClient(dataMapper: CustomMapper, session: CustomURLSession)
-///
+/// In this case we are using the URLSession as a network library
 class URLSessionClient {
     
     private let session: URLSession
