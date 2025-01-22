@@ -32,6 +32,7 @@
 		9DCE80DA2D3FAA9100553019 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCE80D92D3FAA9100553019 /* RealmSwift */; };
 		9DCE80DD2D3FAAF100553019 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80DC2D3FAAEA00553019 /* RealmUser.swift */; };
 		9DCE80DF2D3FACCA00553019 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80DE2D3FACC600553019 /* RealmStorage.swift */; };
+		9DCE80E22D3FB1CF00553019 /* UserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80E12D3FB1C800553019 /* UserUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		9DCE80D42D3FA57D00553019 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		9DCE80DC2D3FAAEA00553019 /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		9DCE80DE2D3FACC600553019 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		9DCE80E12D3FB1C800553019 /* UserUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		9DCE80A42D3F433800553019 /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
+				9DCE80E12D3FB1C800553019 /* UserUsecase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				9DCE80DF2D3FACCA00553019 /* RealmStorage.swift in Sources */,
 				9DCE80B02D3F462B00553019 /* Endpoint.swift in Sources */,
 				9DCE80C42D3F6AE500553019 /* UserStorage.swift in Sources */,
+				9DCE80E22D3FB1CF00553019 /* UserUsecase.swift in Sources */,
 				9DCE80BB2D3F4D9100553019 /* URLSessionMapper.swift in Sources */,
 				9D45F9042D3F3AEB0042B93D /* ViewController.swift in Sources */,
 				9DCE80B72D3F4BAE00553019 /* NetworkClient.swift in Sources */,
