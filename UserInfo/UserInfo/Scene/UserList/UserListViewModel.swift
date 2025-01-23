@@ -37,7 +37,9 @@ class UserListViewModel: BaseViewModel {
                 case .success(let users):
                     self.hasMore = users.count == 20
                     self.users.append(contentsOf: users)
+                    print("Fetched success \(users.count) users")
                 case .failure(let error):
+                    print("Error occurs \(error)")
                     self.handleError(error)
                 }
             }

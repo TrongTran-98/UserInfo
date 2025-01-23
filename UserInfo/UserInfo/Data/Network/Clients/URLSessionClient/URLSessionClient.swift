@@ -33,18 +33,13 @@ extension URLSessionClient: NetworkClient {
         do {
             let request = try endpoint.urlRequest()
             let dataTask = session.dataTask(with: request, completionHandler: { data, response, error in
-                /// Catch error if needed
-                if let error = error {
-                    completion(.failure(URLSessionError.undefined(error)))
-                    return
-                }
                 /// Data response handling
                 do {
-                    let decodedModel = try self.dataMapper.mapData(T.self, data: data, response: response)
+                    let decodedModel = try self.dataMapper.mapData(T.self, error: error, data: data, response: response)
                     completion(.success(decodedModel))
                 } catch {
                     print("error \(error)")
-                    completion(.failure(URLSessionError.undefined(error)))
+                    completion(.failure(error))
                 }
             })
             /// Execute task

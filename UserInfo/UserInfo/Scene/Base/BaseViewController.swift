@@ -32,7 +32,7 @@ class BaseViewController: UIViewController {
     }
     
     func binding() {
-        viewModel.errorPublisher.sink { [weak self] error in
+        viewModel.errorPublisher.receive(on: DispatchQueue.main).sink { [weak self] error in
             // handle error here
             guard let self = self else { return }
             self.handleError(error: error)
@@ -43,9 +43,20 @@ class BaseViewController: UIViewController {
         /// Defined URL Session errors
         if let urlError = error as? URLSessionError {
             /// Other error cases
+            showErrorMessage(urlError.description)
         } else {
             /// Other error cases
+            showErrorMessage(error.localizedDescription)
         }
+    }
+    
+    func showErrorMessage(_ message: String) {
+        let errorAlert = UIAlertController()
+        errorAlert.title = "Error occurs"
+        errorAlert.message = message
+        let action = UIAlertAction(title: "Ok", style: .default)
+        errorAlert.addAction(action)
+        self.present(errorAlert, animated: true)
     }
     
     func showLoadingIndicatorView() {

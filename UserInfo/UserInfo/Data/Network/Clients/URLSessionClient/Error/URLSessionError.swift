@@ -11,5 +11,19 @@ import Foundation
 enum URLSessionError: Error {
     case invalidResponse
     case noData
+    case noInternet
     case undefined(Error)
+    
+    var description: String {
+        switch self {
+        case .invalidResponse:
+            return "Invalid Response"
+        case .noData:
+            return "No Data"
+        case .noInternet:
+            return "No Internet Connection"
+        case .undefined(let error):
+            return error.localizedDescription
+        }
+    }
 }

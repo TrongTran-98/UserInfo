@@ -38,7 +38,11 @@ extension RealmStorage: UserStorage {
     func fetchAllUsers(completion: @escaping (Result<[User], any Error>) -> Void) {
         DispatchQueue.main.async {
             guard let users = self.realm?.objects(RealmUser.self) else {
-                completion(.success([]))
+                if !NWMonitorHelper.shared.isConnected {
+                    completion(.failure(URLSessionError.noInternet))
+                } else {
+                    completion(.success([]))
+                }
                 return
             }
             completion(.success(users.map(\.user)))

@@ -8,12 +8,22 @@
 import Foundation
 
 protocol URLSessionMapper {
-    func mapData<T: Decodable>(_ type: T.Type, data: Data?, response: URLResponse?) throws -> T
+    func mapData<T: Decodable>(_ type: T.Type, error: Error?, data: Data?, response: URLResponse?) throws -> T
 }
 
 /// This is default mapping behavior, this behavior can be changed by override in custom mapper
 extension URLSessionMapper {
-    func mapData<T: Decodable>(_ type: T.Type, data: Data?, response: URLResponse?) throws -> T {
+    func mapData<T: Decodable>(_ type: T.Type, error: Error?, data: Data?, response: URLResponse?) throws -> T {
+        /// Catch error if needed
+        if let error = error {
+            print("Error undefined error \(error.localizedDescription)")
+            let nsError = error as NSError
+            if nsError.code == -1009 {
+                throw URLSessionError.noInternet
+            } else {
+                throw URLSessionError.undefined(error)
+            }
+        }
         /// HTTP response handing
         guard let httpResponse = response as? HTTPURLResponse,
               200..<300 ~= httpResponse.statusCode else {

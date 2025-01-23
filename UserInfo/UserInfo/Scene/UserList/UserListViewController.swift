@@ -23,6 +23,7 @@ class UserListViewController: BaseViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -79,6 +80,15 @@ class UserListViewController: BaseViewController {
     
     @objc private func pullToRefresh() {
         userListViewModel?.refresh()
+    }
+    
+    override func handleError(error: any Error) {
+        /// Stop refresh indicator
+        refresh.endRefreshing()
+        /// Only show error on intial state
+        if dataSource.isEmpty {
+            super.handleError(error: error)
+        }
     }
     
     private func showDetailUser(user: User) {
