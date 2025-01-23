@@ -7,7 +7,12 @@
 import Foundation
 import Network
 
-class NWMonitorHelper {
+protocol NWMonitor {
+    var isConnected: Bool { get set }
+    var isUsingCellular: Bool { get set }
+}
+
+class NWMonitorHelper: NWMonitor {
     
     static let shared: NWMonitorHelper = NWMonitorHelper()
     

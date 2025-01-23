@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9D262DBC2D41EFE2002DFB9B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE81002D41EDC700553019 /* UIImageView+Extension.swift */; };
+		9D262DC82D42050A002DFB9B /* RealmStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D262DC32D420172002DFB9B /* RealmStorageTests.swift */; };
+		9D262DC92D42050E002DFB9B /* UserDefaultStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D262DC42D420191002DFB9B /* UserDefaultStorageTests.swift */; };
+		9D262DCA2D420512002DFB9B /* KingfisherStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D262DC52D4201A0002DFB9B /* KingfisherStorageTests.swift */; };
+		9D262DCC2D4206C5002DFB9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D262DCB2D4206C5002DFB9B /* RealmSwift */; };
+		9D262DCD2D4206C5002DFB9B /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9D262DCB2D4206C5002DFB9B /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9D2874B72D40E722007D0DFA /* URLSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2874B62D40E71C007D0DFA /* URLSessionError.swift */; };
 		9D2874BA2D40E877007D0DFA /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2874B92D40E86E007D0DFA /* UserViewCell.swift */; };
 		9D2874BD2D40E8A1007D0DFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2874BC2D40E8A1007D0DFA /* SnapKit */; };
@@ -18,7 +23,6 @@
 		9D45F9012D3F3AEB0042B93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D45F8FA2D3F3AEB0042B93D /* Main.storyboard */; };
 		9D45F9022D3F3AEB0042B93D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8F42D3F3AEB0042B93D /* AppDelegate.swift */; };
 		9D45F9032D3F3AEB0042B93D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8FB2D3F3AEB0042B93D /* SceneDelegate.swift */; };
-		9D45F9072D3F3AEE0042B93D /* UserInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9052D3F3AEE0042B93D /* UserInfoTests.swift */; };
 		9D45F90B2D3F3AF00042B93D /* UserInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */; };
 		9D45F90C2D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */; };
 		9DCE80AB2D3F452700553019 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80AA2D3F451800553019 /* User.swift */; };
@@ -67,6 +71,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9D262DCE2D4206C5002DFB9B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9D262DCD2D4206C5002DFB9B /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DCE80FA2D41DDC900553019 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D262DC32D420172002DFB9B /* RealmStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageTests.swift; sourceTree = "<group>"; };
+		9D262DC42D420191002DFB9B /* UserDefaultStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorageTests.swift; sourceTree = "<group>"; };
+		9D262DC52D4201A0002DFB9B /* KingfisherStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherStorageTests.swift; sourceTree = "<group>"; };
 		9D2874B62D40E71C007D0DFA /* URLSessionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionError.swift; sourceTree = "<group>"; };
 		9D2874B92D40E86E007D0DFA /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		9D2874C02D410278007D0DFA /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
@@ -94,7 +112,6 @@
 		9D45F8F72D3F3AEB0042B93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D45F8F92D3F3AEB0042B93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D45F8FB2D3F3AEB0042B93D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D45F9052D3F3AEE0042B93D /* UserInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTests.swift; sourceTree = "<group>"; };
 		9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUITests.swift; sourceTree = "<group>"; };
 		9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9DCE80AA2D3F451800553019 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -138,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D262DCC2D4206C5002DFB9B /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +169,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D262DBD2D41FB0C002DFB9B /* UserScene */ = {
+			isa = PBXGroup;
+			children = (
+				9D262DBE2D41FB27002DFB9B /* Mock */,
+			);
+			path = UserScene;
+			sourceTree = "<group>";
+		};
+		9D262DBE2D41FB27002DFB9B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		9D262DBF2D41FE48002DFB9B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9D262DC12D41FE70002DFB9B /* Network */,
+				9D262DC22D41FE80002DFB9B /* CacheStorage */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9D262DC02D41FE69002DFB9B /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		9D262DC12D41FE70002DFB9B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9D262DC02D41FE69002DFB9B /* Client */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9D262DC22D41FE80002DFB9B /* CacheStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9D262DC52D4201A0002DFB9B /* KingfisherStorageTests.swift */,
+				9D262DC42D420191002DFB9B /* UserDefaultStorageTests.swift */,
+				9D262DC32D420172002DFB9B /* RealmStorageTests.swift */,
+			);
+			path = CacheStorage;
+			sourceTree = "<group>";
+		};
 		9D2874B52D40E70D007D0DFA /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +296,8 @@
 		9D45F9062D3F3AEE0042B93D /* UserInfoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D45F9052D3F3AEE0042B93D /* UserInfoTests.swift */,
+				9D262DBD2D41FB0C002DFB9B /* UserScene */,
+				9D262DBF2D41FE48002DFB9B /* Data */,
 			);
 			path = UserInfoTests;
 			sourceTree = "<group>";
@@ -510,6 +578,7 @@
 				9D45F8D02D3F3A0A0042B93D /* Sources */,
 				9D45F8D12D3F3A0A0042B93D /* Frameworks */,
 				9D45F8D22D3F3A0A0042B93D /* Resources */,
+				9D262DCE2D4206C5002DFB9B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -518,6 +587,7 @@
 			);
 			name = UserInfoTests;
 			packageProductDependencies = (
+				9D262DCB2D4206C5002DFB9B /* RealmSwift */,
 			);
 			productName = UserInfoTests;
 			productReference = 9D45F8D42D3F3A0A0042B93D /* UserInfoTests.xctest */;
@@ -661,7 +731,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D45F9072D3F3AEE0042B93D /* UserInfoTests.swift in Sources */,
+				9D262DC92D42050E002DFB9B /* UserDefaultStorageTests.swift in Sources */,
+				9D262DCA2D420512002DFB9B /* KingfisherStorageTests.swift in Sources */,
+				9D262DC82D42050A002DFB9B /* RealmStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,7 +966,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HANH5UY86;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.examination.UserInfoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -913,7 +985,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HANH5UY86;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.examination.UserInfoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -931,6 +1003,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HANH5UY86;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.examination.UserInfoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -948,6 +1021,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HANH5UY86;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.examination.UserInfoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1027,6 +1101,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9D262DCB2D4206C5002DFB9B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DCE80D62D3FAA9100553019 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		9D2874BC2D40E8A1007D0DFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DCE80DB2D3FAAC900553019 /* XCRemoteSwiftPackageReference "SnapKit" */;

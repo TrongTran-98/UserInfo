@@ -11,8 +11,13 @@ class RealmStorage {
     
     static let shared = RealmStorage()
     
-    private let realm: Realm? = try? Realm()
+    private let realm: Realm?
+    private let nwMonitor: NWMonitor
     
+    init(realm: Realm? = try? Realm(), nwMonitor: NWMonitor = NWMonitorHelper.shared) {
+        self.realm = realm
+        self.nwMonitor = nwMonitor
+    }
 }
 
 extension RealmStorage: UserStorage {
@@ -38,13 +43,14 @@ extension RealmStorage: UserStorage {
     func fetchAllUsers(completion: @escaping (Result<[User], any Error>) -> Void) {
         DispatchQueue.main.async {
             guard let users = self.realm?.objects(RealmUser.self) else {
-                if !NWMonitorHelper.shared.isConnected {
+                if !self.nwMonitor.isConnected {
                     completion(.failure(URLSessionError.noInternet))
                 } else {
                     completion(.success([]))
                 }
                 return
             }
+            if users.isEmpty && !self.nwMonitor.isConnected { completion(.failure(URLSessionError.noInternet)); return}
             completion(.success(users.map(\.user)))
         }
     }
