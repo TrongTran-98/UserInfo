@@ -10,6 +10,8 @@ import SnapKit
 import Foundation
 
 class UserCardView: UIView {
+    
+    // MARK: - Interface Properties
     // Avatar
     private let avatarView: UIImageView = {
         let imageView = UIImageView()
@@ -39,6 +41,7 @@ class UserCardView: UIView {
         self.setupView()
     }
     
+    // MARK: - Setup
     private func setupView() {
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 1
@@ -73,6 +76,7 @@ class UserCardView: UIView {
         })
     }
     
+    // MARK: - Bind data
     func bind(_ user: User) {
         /// Avatar
         self.avatarView.loadImage(from: user.avatarUrl)

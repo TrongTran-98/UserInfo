@@ -21,6 +21,7 @@ class UserListViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Interface Properties
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
@@ -41,6 +42,7 @@ class UserListViewController: BaseViewController {
         })
     }
     
+    // MARK: - Binding
     override func binding() {
         super.binding()
         // Binding here
@@ -65,6 +67,7 @@ class UserListViewController: BaseViewController {
         }).store(in: &cancellables)
     }
     
+    // MARK: - Setup View
     private func setupView() {
         navigationItem.title = "Github Users"
         view.backgroundColor = .white
@@ -82,6 +85,7 @@ class UserListViewController: BaseViewController {
         userListViewModel?.refresh()
     }
     
+    // MARK: - Handle Error
     override func handleError(error: any Error) {
         /// Stop refresh indicator
         refresh.endRefreshing()
@@ -91,6 +95,7 @@ class UserListViewController: BaseViewController {
         }
     }
     
+    // MARK: - Action
     private func showDetailUser(user: User) {
         guard let loginName = user.login else { return }
         let controller = UserDetailsViewController(loginName: loginName)

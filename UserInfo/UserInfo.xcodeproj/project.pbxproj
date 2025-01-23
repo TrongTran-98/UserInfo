@@ -295,7 +295,7 @@
 				9DCE80A52D3F433F00553019 /* Repositories */,
 				9DCE80A92D3F436C00553019 /* Service */,
 				9DCE80A72D3F435D00553019 /* Network */,
-				9DCE80A82D3F436200553019 /* Persistent */,
+				9DCE80A82D3F436200553019 /* CacheStorage */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		9DCE80A82D3F436200553019 /* Persistent */ = {
+		9DCE80A82D3F436200553019 /* CacheStorage */ = {
 			isa = PBXGroup;
 			children = (
 				9DCE80C82D3F6B8200553019 /* Protocol */,
@@ -317,7 +317,7 @@
 				9DCE80CA2D3F70CC00553019 /* RealmStorage */,
 				9DCE80E02D3FB0F700553019 /* UserDefaultStorage */,
 			);
-			path = Persistent;
+			path = CacheStorage;
 			sourceTree = "<group>";
 		};
 		9DCE80A92D3F436C00553019 /* Service */ = {

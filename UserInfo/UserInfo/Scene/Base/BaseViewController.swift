@@ -31,6 +31,7 @@ class BaseViewController: UIViewController {
         binding()
     }
     
+    // MARK: - Binding
     func binding() {
         viewModel.errorPublisher.receive(on: DispatchQueue.main).sink { [weak self] error in
             // handle error here
@@ -39,6 +40,7 @@ class BaseViewController: UIViewController {
         }.store(in: &cancellables)
     }
     
+    // MARK: - Error Handling
     func handleError(error: Error) {
         /// Defined URL Session errors
         if let urlError = error as? URLSessionError {
@@ -50,6 +52,7 @@ class BaseViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
     func showErrorMessage(_ message: String) {
         let errorAlert = UIAlertController()
         errorAlert.title = "Error occurs"

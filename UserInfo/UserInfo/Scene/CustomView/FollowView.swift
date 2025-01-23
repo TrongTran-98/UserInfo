@@ -36,6 +36,7 @@ class FollowView: UIView {
     
     private let type: FollowType
     
+    // MARK: - Interface Properties
     private let numberLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
@@ -67,6 +68,7 @@ class FollowView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Setup View
     private func setupView() {
         let stackView = UIStackView()
         stackView.axis = .vertical

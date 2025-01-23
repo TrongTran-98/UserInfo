@@ -11,13 +11,13 @@ class UserDetailsViewController: BaseViewController {
     
     var userDetailsViewModel: UserDetailsViewModel? { return viewModel as? UserDetailsViewModel }
     
+    // MARK: - Interface Properties
     private let infoContainer = UIView()
-    // Card view
     private let userCardView = UserCardView()
-    // Follow view
+    
     private let followerView = FollowView(type: .follower)
     private let followingView = FollowView(type: .following)
-    // URL title
+    
     private let urlTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -25,7 +25,7 @@ class UserDetailsViewController: BaseViewController {
         label.font = .systemFont(ofSize: 15, weight: .bold)
         return label
     }()
-    // URL
+    
     private let urlLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -52,6 +52,7 @@ class UserDetailsViewController: BaseViewController {
         self.userDetailsViewModel?.fetchUserDetails()
     }
     
+    // MARK: - Binding
     override func binding() {
         super.binding()
         
@@ -72,6 +73,7 @@ class UserDetailsViewController: BaseViewController {
         }.store(in: &cancellables)
     }
     
+    // MARK: - Setup View
     private func setupView() {
         navigationItem.title = "User Details"
         /// Setup body
@@ -118,6 +120,7 @@ class UserDetailsViewController: BaseViewController {
         })
     }
     
+    // MARK: - Update Interface
     private func updateUserInfo(_ user: User?) {
         if let user = user {
             infoContainer.isHidden = false
