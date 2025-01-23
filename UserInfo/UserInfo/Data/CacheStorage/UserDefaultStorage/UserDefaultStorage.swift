@@ -35,7 +35,7 @@ extension UserDefaultStorage: UserStorage {
         storageQueue.async { [unowned self] in
             do {
                 guard let encodedData = UserDefaults.standard.data(forKey: self.userStorageKey) else {
-                    completion(.failure(UserDefaultError.nonData))
+                    completion(.success([]))
                     return
                 }
                 let users = try JSONDecoder().decode([User].self, from: encodedData)
@@ -49,6 +49,7 @@ extension UserDefaultStorage: UserStorage {
     func removeAllUsers(completion: @escaping (Result<Void, Error>) -> Void) {
         storageQueue.async { [unowned self] in
             UserDefaults.standard.removeObject(forKey: self.userStorageKey)
+            completion(.success(()))
         }
     }
     
