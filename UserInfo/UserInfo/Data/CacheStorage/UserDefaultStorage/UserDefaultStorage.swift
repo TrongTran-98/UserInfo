@@ -12,7 +12,7 @@ enum UserDefaultError: Error {
 
 /// This is a storage engine using UserDefault, which can be used like RealmStorage
 /// We can change engine by injecting it in initialization of UserRepository
-class UserDefaultStorage {
+final class UserDefaultStorage {
     
     static let shared: UserDefaultStorage = UserDefaultStorage()
     

@@ -26,7 +26,7 @@ class KingfisherStorageTests: XCTestCase {
         super.tearDown()
     }
     
-    func testLoadImage_withValidURL() {
+    func testLoadImageWithValidURL() {
         let expectation = XCTestExpectation(description: "Load image from a valid URL")
         let validURL = "https://avatars.githubusercontent.com/u/101?v=4"
         
@@ -47,7 +47,7 @@ class KingfisherStorageTests: XCTestCase {
         wait(for: [expectation], timeout: 2.0)
     }
     
-    func testLoadImage_withInvalidURL_usePlaceholder() {
+    func testLoadImageWithInvalidURLUsePlaceholder() {
         let expectation = XCTestExpectation(description: "Load image from a valid URL")
         let placeholder = UIImage(systemName: "person")!
         let invalidURL = "invalid url"
@@ -70,26 +70,20 @@ class KingfisherStorageTests: XCTestCase {
     }
     
     func testClearCache() {
-        let validURL = "https://avatars.githubusercontent.com/u/101?v=4"
+        let key = "test_key"
+        let testImage = UIImage(systemName: "person")!
         
-        // Save a test image with valid url to the cache
-        storage.loadImage(
-            in: imageView,
-            from: validURL,
-            placeholder: nil,
-            animated: false
-        )
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let cachedImage = ImageCache.default.retrieveImageInMemoryCache(forKey: validURL)
-            XCTAssertNotNil(cachedImage, "Image should exist in the cache before clearing.")
-            
-            // Clear the cache
-            self.storage.clearCache()
-            
-            // Verify cache is empty
-            let clearedImage = ImageCache.default.retrieveImageInMemoryCache(forKey: validURL)
-            XCTAssertNil(clearedImage, "Cache should be empty after clearing.")
-        }
+        ImageCache.default.store(testImage, forKey: key)
+        
+        // Verify image is stored in cache
+        let cachedImage = ImageCache.default.retrieveImageInMemoryCache(forKey: key)
+        XCTAssertNotNil(cachedImage, "Image should exist in the cache before clearing.")
+        
+        // Clear the cache
+        self.storage.clearCache()
+        
+        // Verify cache is empty
+        let clearedImage = ImageCache.default.retrieveImageInMemoryCache(forKey: key)
+        XCTAssertNil(clearedImage, "Cache should be empty after clearing.")
     }
 }

@@ -7,7 +7,7 @@
 import Foundation
 import RealmSwift
 
-class RealmStorage {
+final class RealmStorage {
     
     static let shared = RealmStorage()
     

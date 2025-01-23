@@ -15,7 +15,7 @@ import Foundation
 ///}
 /// That help us change and update new 3rd Lib or trending technology without modifying code base
 /// In this case we are using the URLSession as a network library
-class URLSessionClient {
+final class URLSessionClient {
     
     private let session: URLSession
     private let dataMapper: URLSessionMapper

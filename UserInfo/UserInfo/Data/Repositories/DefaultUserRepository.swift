@@ -5,7 +5,7 @@
 //  Created by Trong/Corbin/서비스개발팀 on 1/21/25.
 //
 
-class DefaultUserRepository {
+final class DefaultUserRepository {
     
     private let storageCache: UserStorage
     private let service: UserService
