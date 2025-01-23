@@ -39,15 +39,13 @@ class UserCardView: UIView {
         self.setupView()
     }
     
-    override func layoutSubviews() {
-        avatarView.layer.cornerRadius = avatarView.frame.height/2
-    }
-    
     private func setupView() {
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
         self.addSubview(avatarView)
+        avatarView.layer.cornerRadius = 45
+        avatarView.layer.masksToBounds = true
         avatarView.snp.makeConstraints({ make in
             make.top.leading.bottom.equalToSuperview().inset(10)
             make.height.equalTo(avatarView.snp.width)
@@ -76,6 +74,8 @@ class UserCardView: UIView {
     }
     
     func bind(_ user: User) {
+        /// Avatar
+        self.avatarView.loadImage(from: user.avatarUrl)
         /// Load image
         self.usernameLabel.text = user.login
         /// Link

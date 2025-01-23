@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D262DBC2D41EFE2002DFB9B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE81002D41EDC700553019 /* UIImageView+Extension.swift */; };
 		9D2874B72D40E722007D0DFA /* URLSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2874B62D40E71C007D0DFA /* URLSessionError.swift */; };
 		9D2874BA2D40E877007D0DFA /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2874B92D40E86E007D0DFA /* UserViewCell.swift */; };
 		9D2874BD2D40E8A1007D0DFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2874BC2D40E8A1007D0DFA /* SnapKit */; };
@@ -44,6 +45,8 @@
 		9DCE80F52D408D3500553019 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80F42D408D3100553019 /* BaseViewController.swift */; };
 		9DCE80F82D41D47900553019 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCE80F72D41D47900553019 /* Kingfisher */; };
 		9DCE80F92D41DDC900553019 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9DCE80D92D3FAA9100553019 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9DCE80FC2D41EB7D00553019 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80FB2D41EB7800553019 /* ImageStorage.swift */; };
+		9DCE80FF2D41EC6700553019 /* KingfisherStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80FE2D41EC6200553019 /* KingfisherStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		9DCE80EF2D40822E00553019 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		9DCE80F22D408D2900553019 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9DCE80F42D408D3100553019 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9DCE80FB2D41EB7800553019 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
+		9DCE80FE2D41EC6200553019 /* KingfisherStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherStorage.swift; sourceTree = "<group>"; };
+		9DCE81002D41EDC700553019 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 			children = (
 				9D45F8F62D3F3AEB0042B93D /* Info.plist */,
 				9DCE809F2D3F3B5300553019 /* Application */,
+				9DCE81012D41EDD200553019 /* Extension */,
 				9DCE80C92D3F6DC100553019 /* Utils */,
 				9DCE80A22D3F3F8B00553019 /* Domain */,
 				9DCE80A62D3F435700553019 /* Data */,
@@ -306,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				9DCE80C82D3F6B8200553019 /* Protocol */,
+				9DCE80FD2D41EC5200553019 /* KingfisherStorage */,
 				9DCE80CA2D3F70CC00553019 /* RealmStorage */,
 				9DCE80E02D3FB0F700553019 /* UserDefaultStorage */,
 			);
@@ -367,6 +375,7 @@
 		9DCE80C82D3F6B8200553019 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				9DCE80FB2D41EB7800553019 /* ImageStorage.swift */,
 				9DCE80C32D3F6AE200553019 /* UserStorage.swift */,
 			);
 			path = Protocol;
@@ -450,6 +459,22 @@
 				9DCE80F42D408D3100553019 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		9DCE80FD2D41EC5200553019 /* KingfisherStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE80FE2D41EC6200553019 /* KingfisherStorage.swift */,
+			);
+			path = KingfisherStorage;
+			sourceTree = "<group>";
+		};
+		9DCE81012D41EDD200553019 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE81002D41EDC700553019 /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,7 +624,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D262DBC2D41EFE2002DFB9B /* UIImageView+Extension.swift in Sources */,
 				9DCE80D32D3FA4D400553019 /* DefaultUserRepository.swift in Sources */,
+				9DCE80FC2D41EB7D00553019 /* ImageStorage.swift in Sources */,
 				9DCE80D12D3FA48200553019 /* UserRepository.swift in Sources */,
 				9D45F9022D3F3AEB0042B93D /* AppDelegate.swift in Sources */,
 				9DCE80B22D3F46E900553019 /* UserEndpoint.swift in Sources */,
@@ -621,6 +648,7 @@
 				9DCE80C22D3F651D00553019 /* UserService.swift in Sources */,
 				9DCE80DF2D3FACCA00553019 /* RealmStorage.swift in Sources */,
 				9DCE80B02D3F462B00553019 /* Endpoint.swift in Sources */,
+				9DCE80FF2D41EC6700553019 /* KingfisherStorage.swift in Sources */,
 				9DCE80C42D3F6AE500553019 /* UserStorage.swift in Sources */,
 				9DCE80E22D3FB1CF00553019 /* UserUsecase.swift in Sources */,
 				9DCE80BB2D3F4D9100553019 /* URLSessionMapper.swift in Sources */,
@@ -992,8 +1020,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.1.3;
+				kind = exactVersion;
+				version = 7.6.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
