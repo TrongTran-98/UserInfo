@@ -76,7 +76,6 @@ class UserDetailsViewController: BaseViewController {
     // MARK: - Setup View
     private func setupView() {
         navigationItem.title = "User Details"
-        /// Setup body
         
         view.backgroundColor = .white
         view.addSubview(infoContainer)

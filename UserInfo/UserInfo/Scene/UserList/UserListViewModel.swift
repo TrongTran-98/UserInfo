@@ -15,11 +15,11 @@ class UserListViewModel: BaseViewModel {
     private(set) var hasMore: Bool = true
     private let pageSize: Int = 20
     
-    
     init(fetchUsersUsecase: FetchUsersUsecase = DefaultFetchUsersUsecase()) {
         self.fetchUsersUsecase = fetchUsersUsecase
     }
     
+    // MARK: - Fetch User
     func fetchUsers() {
         guard !isLoading, hasMore else { return }
         /// Update loading status
@@ -46,6 +46,7 @@ class UserListViewModel: BaseViewModel {
         }
     }
     
+    // MARK: - Refresh
     func refresh() {
         /// Reset
         users.removeAll()

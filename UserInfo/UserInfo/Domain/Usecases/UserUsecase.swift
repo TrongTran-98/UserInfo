@@ -7,7 +7,7 @@ protocol UserUsecase {
     var userRepository: UserRepository { get }
 }
 
-// MARK: - Fetch Users
+// MARK: - Fetch Users Usecase
 protocol FetchUsersUsecase: UserUsecase {
     func fetchUsers(pageSize: Int, sinceId: Int, completion: @escaping (Result<[User], Error>) -> Void)
 }

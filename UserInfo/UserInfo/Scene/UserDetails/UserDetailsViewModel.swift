@@ -19,6 +19,7 @@ class UserDetailsViewModel: BaseViewModel {
         self.loginName = loginName
     }
     
+    // MARK: - Fetch Data
     func fetchUserDetails() {
         guard !isLoading else { return }
         /// Update loading status
