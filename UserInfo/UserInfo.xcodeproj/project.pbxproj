@@ -24,7 +24,6 @@
 		9D45F9022D3F3AEB0042B93D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8F42D3F3AEB0042B93D /* AppDelegate.swift */; };
 		9D45F9032D3F3AEB0042B93D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F8FB2D3F3AEB0042B93D /* SceneDelegate.swift */; };
 		9D45F90B2D3F3AF00042B93D /* UserInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */; };
-		9D45F90C2D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */; };
 		9D5AB22F2D4213BA00555320 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5AB22E2D4213BA00555320 /* Kingfisher */; };
 		9D5AB2312D4219F500555320 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AB2302D4219EB00555320 /* MockNetworkClient.swift */; };
 		9D5AB2372D421DAF00555320 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AB2362D421DAF00555320 /* Users.json */; };
@@ -33,6 +32,10 @@
 		9D5AB23D2D436C2E00555320 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AB23C2D436C2800555320 /* MockRepository.swift */; };
 		9D5AB23F2D436CD700555320 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AB23E2D436CC900555320 /* UserListViewModelTests.swift */; };
 		9D5AB2412D436CE200555320 /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AB2402D436CDA00555320 /* UserDetailViewModelTests.swift */; };
+		9D5AB2682D437CC000555320 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5AB2672D437CC000555320 /* RealmSwift */; };
+		9D5AB2692D437CC000555320 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9D5AB2672D437CC000555320 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9D5AB26C2D437CC400555320 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5AB26B2D437CC400555320 /* Kingfisher */; };
+		9D5AB26E2D437CC700555320 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5AB26D2D437CC700555320 /* SnapKit */; };
 		9DCE80AB2D3F452700553019 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80AA2D3F451800553019 /* User.swift */; };
 		9DCE80B02D3F462B00553019 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80AF2D3F462500553019 /* Endpoint.swift */; };
 		9DCE80B22D3F46E900553019 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE80B12D3F46D700553019 /* UserEndpoint.swift */; };
@@ -90,6 +93,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9D5AB26A2D437CC000555320 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9D5AB2692D437CC000555320 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DCE80FA2D41DDC900553019 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,7 +135,6 @@
 		9D45F8F92D3F3AEB0042B93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D45F8FB2D3F3AEB0042B93D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUITests.swift; sourceTree = "<group>"; };
-		9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9D5AB2302D4219EB00555320 /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		9D5AB2362D421DAF00555320 /* Users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
 		9D5AB2382D42216B00555320 /* UserDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserDetail.json; sourceTree = "<group>"; };
@@ -179,6 +192,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5AB26E2D437CC700555320 /* SnapKit in Frameworks */,
+				9D5AB26C2D437CC400555320 /* Kingfisher in Frameworks */,
+				9D5AB2682D437CC000555320 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				9D45F9082D3F3AF00042B93D /* UserInfoUITests.swift */,
-				9D45F9092D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift */,
 			);
 			path = UserInfoUITests;
 			sourceTree = "<group>";
@@ -608,6 +623,7 @@
 				9D45F8DA2D3F3A0A0042B93D /* Sources */,
 				9D45F8DB2D3F3A0A0042B93D /* Frameworks */,
 				9D45F8DC2D3F3A0A0042B93D /* Resources */,
+				9D5AB26A2D437CC000555320 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -616,6 +632,9 @@
 			);
 			name = UserInfoUITests;
 			packageProductDependencies = (
+				9D5AB2672D437CC000555320 /* RealmSwift */,
+				9D5AB26B2D437CC400555320 /* Kingfisher */,
+				9D5AB26D2D437CC700555320 /* SnapKit */,
 			);
 			productName = UserInfoUITests;
 			productReference = 9D45F8DE2D3F3A0A0042B93D /* UserInfoUITests.xctest */;
@@ -757,7 +776,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D45F90B2D3F3AF00042B93D /* UserInfoUITests.swift in Sources */,
-				9D45F90C2D3F3AF00042B93D /* UserInfoUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +851,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HANH5UY86;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UserInfo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -954,6 +973,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1130,6 +1150,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9DCE80F62D41D46C00553019 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		9D5AB2672D437CC000555320 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DCE80D62D3FAA9100553019 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		9D5AB26B2D437CC400555320 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DCE80F62D41D46C00553019 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		9D5AB26D2D437CC700555320 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DCE80DB2D3FAAC900553019 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		9DCE80D92D3FAA9100553019 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;

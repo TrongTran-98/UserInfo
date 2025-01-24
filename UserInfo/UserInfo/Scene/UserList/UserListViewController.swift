@@ -24,6 +24,7 @@ class UserListViewController: BaseViewController {
     // MARK: - Interface Properties
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.accessibilityIdentifier = "usersTableView"
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
@@ -117,6 +118,7 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserViewCell", for: indexPath) as? UserViewCell else { return UITableViewCell() }
         let user = dataSource[indexPath.row]
         cell.bind(user)
+        cell.accessibilityIdentifier = "userCell_\(indexPath.row)"
         return cell
     }
     

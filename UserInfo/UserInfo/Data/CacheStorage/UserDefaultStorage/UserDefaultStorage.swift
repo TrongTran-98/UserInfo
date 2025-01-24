@@ -24,15 +24,16 @@ final class UserDefaultStorage {
 extension UserDefaultStorage: UserStorage {
     
     func saveUsers(_ users: [User]) {
-        storageQueue.async { [unowned self] in
-            guard let encodedData = try? JSONEncoder().encode(users) else { return }
+        storageQueue.async { [weak self] in
+            guard let self = self, let encodedData = try? JSONEncoder().encode(users) else { return }
             /// Save data into UserDefault
             UserDefaults.standard.set(encodedData, forKey: self.userStorageKey)
         }
     }
     
     func fetchAllUsers(completion: @escaping (Result<[User], Error>) -> Void) {
-        storageQueue.async { [unowned self] in
+        storageQueue.async { [weak self] in
+            guard let self = self else { return }
             do {
                 guard let encodedData = UserDefaults.standard.data(forKey: self.userStorageKey) else {
                     completion(.success([]))

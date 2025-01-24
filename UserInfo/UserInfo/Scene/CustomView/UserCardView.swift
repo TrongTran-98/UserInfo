@@ -22,6 +22,7 @@ class UserCardView: UIView {
     // User name
     private let usernameLabel: UILabel = {
         let label = UILabel()
+        label.accessibilityIdentifier = "usernameLabel"
         label.textColor = .black
         label.font = .systemFont(ofSize: 15, weight: .bold)
         return label

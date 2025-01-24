@@ -6,36 +6,55 @@
 import XCTest
 
 final class UserInfoUITests: XCTestCase {
-
+    
+    var app: XCUIApplication!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        // Initialize the app
+        app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // Ensure tests stop on failure
+        continueAfterFailure = false
     }
-
-    @MainActor
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    override func tearDownWithError() throws {
+        app = nil
+    }
+    
+    func testListUsersViewDisplaysData() throws {
+        // Verify the table view exists
+        let tableView = app.tables["usersTableView"]
+        XCTAssertTrue(tableView.exists, "The table view should exist on the screen.")
+        
+        // Wait for the first cell to appear
+        let firstCell = tableView.cells["userCell_0"]
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cell should appear in the table view.")
+    }
+    
+    func testNavigationToDetailViewOnCellTap() throws {
+        // Access the table view
+        let tableView = app.tables["usersTableView"]
+        XCTAssertTrue(tableView.exists, "The table view should exist on the screen.")
+        
+        // Get the first cell
+        let firstCell = tableView.cells["userCell_0"]
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cell should appear in the table view.")
+        
+        // Get user name value in title name
+        let userName = firstCell.staticTexts["usernameLabel"].label
+        
+        // Tap the first cell
+        firstCell.tap()
+        
+        // Verify the detail view is displayed
+        let detailLabel = app.staticTexts["usernameLabel"]
+        XCTAssertTrue(detailLabel.waitForExistence(timeout: 5), "The detail view should appear after tapping a cell.")
+        
+        // Get detail user name
+        let detailUserName = detailLabel.label
+        
+        // Check the detail view content (adjust based on your detail view implementation)
+        XCTAssertEqual(detailUserName, userName, "The detail view should display the correct user details.")
     }
 }
