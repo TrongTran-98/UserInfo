@@ -10,18 +10,18 @@
 import Foundation
 import XCTest
 
+enum UserTestCase {
+    case fetchUsersSuccess
+    case fetchUserDetailSuccess
+    case noInternetError
+    case unknowError
+    case noDataError
+}
+
 class MockNetworkClient: NetworkClient {
-    
-    enum TestCase {
-        case fetchUsersSuccess
-        case fetchUserDetailSuccess
-        case noInternetError
-        case unknowError
-        case noDataError
-    }
 
     var requestCount: Int = 0
-    var testCase: TestCase = .fetchUsersSuccess
+    var testCase: UserTestCase = .fetchUsersSuccess
     var mapper: URLSessionMapper = DefaultURLSessionMapper()
     
     func request<T>(_ endpoint: Endpoint, completion: @escaping (Result<T, any Error>) -> Void) where T : Decodable {
@@ -44,7 +44,7 @@ class MockNetworkClient: NetworkClient {
         case .unknowError:
             completion(.failure(URLSessionError.undefined(NSError(domain: "unknow", code: 09))))
         case .noDataError:
-            completion(.failure(URLSessionError.noInternet))
+            completion(.failure(URLSessionError.noData))
         }
     }
     
